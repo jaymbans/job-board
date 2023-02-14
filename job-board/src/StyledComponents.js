@@ -1,54 +1,39 @@
-// imports
+// Imports
+import Box from '@mui/material/Box';
+import { styled } from '@mui/material/styles';
 import Input from '@mui/material/Input';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import * as React from 'react';
-import IconButton from '@mui/material/IconButton';
-import InputAdornment from '@mui/material/InputAdornment';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import Button from '@mui/material/Button';
 
+const PRIMARY_GREEN = '#37B54B'
 
-// components
-export function InputWithIcon() {
+// Login Page
 
-  return (
-    <>
-      <Input
-        startAdornment={
-          <InputAdornment position="start">
-            <AccountCircle />
-          </InputAdornment>
-        }
-        placeholder='Username or Email'
-      />
-    </>
-  )
-}
+export const LoginContainer = styled(Box)(() => ({
+  height: '100vh',
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
+}))
 
-export function PasswordInput() {
-  const [showPassword, setShowPassword] = React.useState(false);
+export const LoginPanel = styled(Box)(() => ({
+  backgroundColor: 'white',
+  height: 350,
+  width: 475,
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  padding: '25px 0'
+}))
 
-  const handleClickShowPassword = () => setShowPassword((show) => !show);
+export const LoginInput = styled(Input)(() => ({
+  border: '1px solid ' + PRIMARY_GREEN,
+  borderRadius: '5px',
+  padding: '3px 10px',
+  margin: '7px 0',
+}))
 
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  };
-  return (
-    <>
-      <Input
-        type={showPassword ? 'text' : 'password'}
-        placeholder='Password'
-        endAdornment={
-          <InputAdornment position="start">
-            <IconButton
-              onClick={handleClickShowPassword}
-              onMouseDown={handleMouseDownPassword}
-            >
-              {showPassword ? <VisibilityOff /> : <Visibility />}
-            </IconButton>
-          </InputAdornment>
-        }
-      />
-    </>
-  )
-}
+export const LoginButton = styled(Button)(() => ({
+  background: PRIMARY_GREEN,
+  color: 'white'
+}))

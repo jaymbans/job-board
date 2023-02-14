@@ -1,10 +1,15 @@
 import './style.css';
 import { Routes, Route, Link } from 'react-router-dom';
+import { useState } from 'react';
+
 import JobBoard from './components/JobBoard'
 import Login from './components/Login'
-import JobDetails from './components/JobDetails'
+import JobDetails from './components/JobDetails';
+import Jobs from './jobs'
 
 function App() {
+  const [jobsData, setJobsData] = useState(Jobs)
+
   return (
     <div className="App">
       <Routes>

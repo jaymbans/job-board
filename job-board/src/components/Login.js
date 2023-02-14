@@ -1,5 +1,4 @@
 import Typography from '@mui/material/Typography';
-import FormControl from '@mui/material/FormControl';
 import FormGroup from '@mui/material/FormGroup';
 import InputAdornment from '@mui/material/InputAdornment';
 import AccountCircle from '@mui/icons-material/AccountCircle';
@@ -11,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { useState } from 'react'
 
-import { LoginContainer, LoginPanel, LoginInput, LoginButton } from '../StyledComponents';
+import { LoginContainer, LoginPanel, LoginInput, GreenButton } from '../StyledComponents';
 
 
 
@@ -75,7 +74,7 @@ export default function Login({ loggedIn, setLoggedIn }) {
                 </IconButton>
               </InputAdornment>
             } />
-          <LoginButton onClick={logIn} variant="contained">Continue with Email</LoginButton>
+          <GreenButton onClick={logIn} variant="contained">Continue with Email</GreenButton>
         </FormGroup>
       </LoginPanel>
     </LoginContainer>

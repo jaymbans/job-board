@@ -1,7 +1,7 @@
 export default function JobBoard() {
   return (
     <>
-      JobBoard
+      <h1>job board</h1>
     </>
   )
 }

@@ -60,7 +60,13 @@ export default function JobBoard() {
             {Jobs.map(job => {
               return (
                 <Job
-                  key={job.id} />
+                  key={job.id}
+                  title={job.title}
+                  postedTime={job.postedTime}
+                  location={job.location}
+                  description={job.description}
+                  hourlyUSD={job.hourlyUSD}
+                />
               )
             })}
           </JobsContainer>

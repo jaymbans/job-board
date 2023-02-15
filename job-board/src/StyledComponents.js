@@ -73,7 +73,8 @@ export const JobsContentContainer = styled(Box)(() => ({
 
 export const JobsSearchContainer = styled(Box)(() => ({
   padding: '5px 0',
-  display: 'flex'
+  display: 'flex',
+  marginBottom: 40
 }))
 
 
@@ -91,5 +92,10 @@ export const JobsContainer = styled(Box)(() => ({
   width: '85%',
   display: 'flex',
   flexDirection: 'column',
-  background: 'red'
+}))
+
+export const JobListing = styled(Box)(() => ({
+  padding: '25px',
+  borderBottom: '2px solid #f1f1f1',
+  backgroundColor: 'white'
 }))

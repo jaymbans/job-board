@@ -8,7 +8,8 @@ import {
   JobsDescriptionsContainer,
   Categories,
   PRIMARY_GREEN,
-  JobsContainer
+  JobsContainer,
+  InvisibleButton
 }
   from "../StyledComponents"
 
@@ -17,7 +18,30 @@ import SearchIcon from '@mui/icons-material/Search';
 import Jobs from '../jobs'
 import Job from "./Job";
 
+import { useState, useEffect } from 'react';
+
 export default function JobBoard() {
+  const [jobFilter, setJobFilter] = useState('');
+  const [jobsToDisplay, setJobsToDisplay] = useState(Jobs);
+
+  useEffect(() => {
+    if (!jobFilter) {
+      return
+    }
+
+    setJobsToDisplay(
+      Jobs.filter(job => job.category === jobFilter)
+    )
+  }, [jobFilter])
+
+
+  const switchJobCategory = (e) => {
+    document.querySelectorAll('.invis-btn').forEach(btn => btn.style.color = 'inherit');
+    e.target.style.color = PRIMARY_GREEN;
+    setJobFilter(e.target.textContent)
+    return;
+  }
+
   return (
     <>
       <NavigationBar>
@@ -46,18 +70,18 @@ export default function JobBoard() {
             <Typography variant="h6" gutterBottom>
               Categories
             </Typography>
-            <Typography variant="body2" gutterBottom >
+            <InvisibleButton variant="body2" className='invis-btn' onClick={switchJobCategory} >
               Front End Dev
-            </Typography>
-            <Typography variant="body2" gutterBottom sx={{ color: PRIMARY_GREEN }} >
+            </InvisibleButton>
+            <InvisibleButton variant="body2" className='invis-btn' onClick={switchJobCategory}>
               Design
-            </Typography>
-            <Typography variant="body2" gutterBottom >
+            </InvisibleButton>
+            <InvisibleButton variant="body2" className='invis-btn' onClick={switchJobCategory}>
               E-Commerce
-            </Typography>
+            </InvisibleButton>
           </Categories>
           <JobsContainer>
-            {Jobs.map(job => {
+            {jobsToDisplay.map(job => {
               return (
                 <Job
                   key={job.id}

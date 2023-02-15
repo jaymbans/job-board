@@ -99,3 +99,11 @@ export const JobListing = styled(Box)(() => ({
   borderBottom: '2px solid #f1f1f1',
   backgroundColor: 'white'
 }))
+
+export const InvisibleButton = styled(Button)(() => ({
+  textTransform: 'capitalize',
+  padding: 0,
+  margin: 0,
+  justifyContent: 'flex-start',
+  fontWeight: 'normal'
+}))

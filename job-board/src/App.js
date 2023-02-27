@@ -24,8 +24,8 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Login loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} />
-        <Route path="/jobs" element={<JobBoard />} />
-        <Route path="/job/:id" element={<JobDetails />} />
+        <Route path="/jobs" element={<JobBoard jobsData={jobsData} loggedIn={loggedIn} />} />
+        <Route path="/job/:id" element={<JobDetails jobsData={jobsData} />} />
       </Routes>
     </div>
   );

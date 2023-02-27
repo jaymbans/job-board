@@ -3,7 +3,8 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
-import Link from '@mui/material/Link';
+// import Link from '@mui/material/Link';
+import { Link } from 'react-router-dom'
 
 export const PRIMARY_GREEN = '#37B54B';
 export const SECONDARY_GRAY = '#5C5C5C';
@@ -39,6 +40,11 @@ export const GreenButton = styled(Button)(() => ({
   background: PRIMARY_GREEN,
   color: 'white'
 }))
+export const WhiteButton = styled(Button)(() => ({
+  background: 'white',
+  color: PRIMARY_GREEN,
+  border: `1px solid ${PRIMARY_GREEN}`
+}))
 
 // Jobs Page
 
@@ -61,14 +67,15 @@ export const NavLink = styled(Link)(() => ({
   color: 'white',
   width: '10%',
   margin: '0 5%',
-  textAlign: 'center'
+  textAlign: 'center',
+  textDecoration: 'none'
 }))
 
 
 export const JobsContentContainer = styled(Box)(() => ({
   width: '80%',
   margin: '30px auto',
-  color: SECONDARY_GRAY
+  color: SECONDARY_GRAY,
 }))
 
 export const JobsSearchContainer = styled(Box)(() => ({
@@ -106,4 +113,23 @@ export const InvisibleButton = styled(Button)(() => ({
   margin: 0,
   justifyContent: 'flex-start',
   fontWeight: 'normal'
+}))
+
+export const JobDetailsContainer = styled(Box)(() => ({
+  width: '60%'
+}))
+export const JobDetailsPanel = styled(Box)(() => ({
+  borderRadius: '5px',
+  width: '30%',
+  marginLeft: '10%',
+  borderRadius: 5
+}))
+
+export const PanelDivider = styled(Box)(() => ({
+  borderBottom: '1px solid #DBDDDD',
+  padding: '15px 20px',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  background: 'white'
 }))

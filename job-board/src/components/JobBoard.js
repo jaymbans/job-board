@@ -15,14 +15,13 @@ import {
 
 import Typography from '@mui/material/Typography';
 import SearchIcon from '@mui/icons-material/Search';
-import Jobs from '../jobs'
 import Job from "./Job";
 
 import { useState, useEffect } from 'react';
-
-export default function JobBoard() {
+// 
+export default function JobBoard({ jobsData, loggedIn }) {
   const [jobFilter, setJobFilter] = useState('');
-  const [jobsToDisplay, setJobsToDisplay] = useState(Jobs);
+  const [jobsToDisplay, setJobsToDisplay] = useState(jobsData);
 
   useEffect(() => {
     if (!jobFilter) {
@@ -30,7 +29,7 @@ export default function JobBoard() {
     }
 
     setJobsToDisplay(
-      Jobs.filter(job => job.category === jobFilter)
+      jobsData.filter(job => job.category === jobFilter)
     )
   }, [jobFilter])
 
@@ -51,8 +50,12 @@ export default function JobBoard() {
             marginRight: '20%'
           }}
           placeholder="Search" />
-        <NavLink href="#">Find a Job</NavLink>
-        <NavLink href="/">Login</NavLink>
+        <NavLink to={'/jobs'}>
+          Find a Job
+        </NavLink>
+        <NavLink to={'/'}>
+          Login
+        </NavLink>
       </NavigationBar>
       <JobsContentContainer>
         <JobsSearchContainer>
@@ -85,6 +88,7 @@ export default function JobBoard() {
               return (
                 <Job
                   key={job.id}
+                  id={job.id}
                   title={job.title}
                   postedTime={job.postedTime}
                   location={job.location}

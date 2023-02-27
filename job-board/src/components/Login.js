@@ -8,13 +8,16 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import { LoginContainer, LoginPanel, LoginInput, GreenButton } from '../StyledComponents';
+
+import { useNavigate } from 'react-router-dom';
 
 
 
 export default function Login({ loggedIn, setLoggedIn }) {
+  const navigate = useNavigate();
 
   // state
   const [showPassword, setShowPassword] = useState(false);
@@ -37,6 +40,10 @@ export default function Login({ loggedIn, setLoggedIn }) {
       return toast.error('Please enter valid username and password (hint: any string!)')
     }
   }
+
+  useEffect(() => {
+    loggedIn && navigate('/jobs')
+  }, [loggedIn])
 
 
   return (

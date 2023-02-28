@@ -1,5 +1,5 @@
 import './style.css';
-import { Routes, Route, useNavigate, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 import JobBoard from './components/JobBoard'

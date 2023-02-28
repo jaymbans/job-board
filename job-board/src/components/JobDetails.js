@@ -77,16 +77,21 @@ export default function JobDetails({ jobsData }) {
               padding: 0,
               height: 40,
               marginBottom: 2,
-              textTransform: 'capitalize'
+              textTransform: 'capitalize',
+              '@media (max-width: 700px)': {
+                fontSize: '10px'
+              }
             }}>
               Submit a Proposal
             </GreenButton>
             <WhiteButton sx={{
-              // fontSize: 11,
               borderRadius: 20,
               padding: 0,
               height: 40,
-              textTransform: 'capitalize'
+              textTransform: 'capitalize',
+              '@media (max-width: 700px)': {
+                fontSize: '9px'
+              }
             }}>
               <FavoriteBorderIcon />  Save Job
             </WhiteButton>

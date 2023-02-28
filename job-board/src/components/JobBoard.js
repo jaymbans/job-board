@@ -60,11 +60,27 @@ export default function JobBoard({ jobsData, loggedIn }) {
       <JobsContentContainer>
         <JobsSearchContainer>
           <Typography variant="h5" gutterBottom
-            sx={{ padding: 0, margin: 0, width: '15%' }} >
+            sx={{
+              padding: 0, margin: '0', width: '15%',
+              '@media (max-width: 915px)': {
+                fontSize: '20px',
+              },
+              '@media (max-width: 700px)': {
+                width: '100%',
+                textAlign: 'center'
+              }
+            }} >
             Find Work
           </Typography>
           <SearchBar placeholder="Search" sx={{ width: '79%' }} />
-          <GreenButton sx={{ borderRadius: '0' }}>
+          <GreenButton sx={{
+            borderRadius: '0',
+            '@media (max-width: 900px)': {
+              width: '79%',
+              textAlign: 'center',
+              padding: '2px 0'
+            }
+          }}>
             <SearchIcon />
           </GreenButton>
         </JobsSearchContainer>

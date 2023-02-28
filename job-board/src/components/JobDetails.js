@@ -32,7 +32,6 @@ export default function JobDetails({ jobsData }) {
     return;
   }, [])
 
-  console.log(currentJobDetails)
   return (
     <>
       <NavigationBar>
